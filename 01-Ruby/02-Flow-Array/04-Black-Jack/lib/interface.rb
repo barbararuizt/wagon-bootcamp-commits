@@ -7,7 +7,7 @@ user = 0
 bank = pick_bank_score
 user += pick_player_card
 
-while inpt.include("y")?
+while inpt.include('y')
 
   if user >= 21
     puts end_game_message(user, bank)
@@ -15,7 +15,7 @@ while inpt.include("y")?
     puts state_of_the_game(user, bank)
   end
 
-  user = user + pick_player_card
+  user += pick_player_card
   inpt = gets.chomp
 end
 
