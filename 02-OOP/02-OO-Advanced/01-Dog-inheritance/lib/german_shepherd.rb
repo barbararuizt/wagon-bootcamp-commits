@@ -1,2 +1,4 @@
-class GermanShepherd
+require "dog"
+
+class GermanShepherd < Dog
 end
