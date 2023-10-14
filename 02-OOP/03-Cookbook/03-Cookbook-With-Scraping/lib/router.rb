@@ -1,12 +1,11 @@
-# TODO: implement the router of your app.
 class Router
   def initialize(controller)
     @controller = controller
-    @running = true
+    @running    = true
   end
 
   def run
-    puts "Welcome to the Food Delivery!"
+    puts "Welcome to the Cookbook!"
     puts "           --           "
 
     while @running
@@ -23,9 +22,11 @@ class Router
     case action
     when 1 then @controller.list
     when 2 then @controller.add
-    when 3 then stop
+    when 3 then @controller.remove
+    when 4 then @controller.import
+    when 5 then stop
     else
-      puts "Please press 1, 2 or 3"
+      puts "Choose an option between 1 and 5"
     end
   end
 
@@ -36,8 +37,10 @@ class Router
   def display_tasks
     puts ""
     puts "What do you want to do next?"
-    puts "1 - List meals"
-    puts "2 - Add a meal"
-    puts "3 - Stop and exit the program"
+    puts "1 - List all recipes"
+    puts "2 - Add a new recipe"
+    puts "3 - Remove a recipe"
+    puts "4 - Import recipes from the internet"
+    puts "5 - Stop and exit the program"
   end
 end
