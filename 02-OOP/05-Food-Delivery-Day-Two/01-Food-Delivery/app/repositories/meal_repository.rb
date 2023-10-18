@@ -1,6 +1,13 @@
 require_relative 'base_repository'
 
 class MealRepository < BaseRepository
+  def create(item)
+    item.id = @next_id
+    @elements << item
+    @next_id += 1
+    save_csv
+  end
+
   private
 
   def load_csv

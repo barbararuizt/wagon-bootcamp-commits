@@ -1,11 +1,6 @@
 require_relative "../models/meal"
 require_relative "../views/meals_view"
 
-# add meals
-# list meals
-# add customers
-# list customers
-
 class MealsController
   def initialize(repo)
     @repo = repo
@@ -23,7 +18,7 @@ class MealsController
     meals = @repo.all
     @view.display(meals)
   end
-  
+
   def destroy
     list
     id = @view.ask_for('id').to_i
