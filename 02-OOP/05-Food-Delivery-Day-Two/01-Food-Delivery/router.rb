@@ -1,9 +1,10 @@
 # TODO: implement the router of your app.
 class Router
-  def initialize(meals_c, customer_c, sessions_c)
+  def initialize(meals_c, customer_c, sessions_c, orders_c)
     @meals_controller = meals_c
     @customer_controller = customer_c
     @sessions_controller = sessions_c
+    @orders_controller = orders_c
     @running = true
   end
 
@@ -53,6 +54,7 @@ class Router
     puts '3. Log out'
     puts '4. Exit'
     print '> '
+    gets.chomp.to_i
   end
   
   def dispatch_manager(action)
@@ -72,7 +74,7 @@ class Router
 
   def dispatch_rider(action)
     case action
-    when 1 then @orders_controller.list_undelivered(@current_user)
+    when 1 then @orders_controller.list_undelivered_orders(@current_user)
     when 2 then @orders_controller.mark_as_delivered(@current_user)
     when 3 then logout
     when 4 then stop
@@ -83,13 +85,13 @@ class Router
 
   def route_manager_action
     action = manager_menu
-    print 'clear'
+    system 'clear'
     dispatch_manager(action)
   end
 
   def route_rider_action
     action = rider_menu
-    print 'clear'
+    system 'clear'
     dispatch_rider(action)
   end
 
