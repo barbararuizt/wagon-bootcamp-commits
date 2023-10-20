@@ -13,7 +13,7 @@ class Router
     while @running
       @current_user = @sessions_controller.login
       while @current_user
-        if @current_user.role == 'manager'
+        if @current_user.manager?
           route_manager_action
         else
           route_rider_action
@@ -54,19 +54,7 @@ class Router
     puts '4. Exit'
     print '> '
   end
-
-  def display_many_and_get_choice
-    puts ' '
-    puts 'What do you want to do next?'
-    puts '1. List all meals'
-    puts '2. Add a new meal'
-    puts '3. List all customers'
-    puts '4. Add a new customer'
-    puts '5. Exit'
-    print '> '
-    gets.chomp.to_i
-  end
-
+  
   def dispatch_manager(action)
     case action
     when 1 then @meals_controller.list
@@ -87,6 +75,7 @@ class Router
     when 1 then @orders_controller.list_undelivered(@current_user)
     when 2 then @orders_controller.mark_as_delivered(@current_user)
     when 3 then logout
+    when 4 then stop
     else
       puts 'Please choose a valid option'
     end
@@ -109,6 +98,7 @@ class Router
   end
 
   def stop
+    logout
     @running = false
   end
 end
