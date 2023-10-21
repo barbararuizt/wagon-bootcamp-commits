@@ -36,7 +36,12 @@ def long_tracks(db, min_length)
 end
 
 def albums_per_artist(db)
-  count = "COUNT(*) FROM artists JOIN albums ON artists.id = albums.artist_id GROUP BY artists.name"
-  results = db.execute("SELECT artists.name, #{count};")
+  query = <<~SQL
+    SELECT artists.name, COUNT(*) AS album_count
+    FROM artists
+    JOIN albums ON artists.id = albums.artist_id
+    GROUP BY artists.name;
+  SQL
+  results = db.execute(query)
   # TODO: return an array of arrays, each containing the artist's name and the number of albums they have
 end
