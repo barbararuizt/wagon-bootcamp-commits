@@ -26,6 +26,10 @@ class OrderRepository
     @elements.reject { |order| order.delivered? }
   end
 
+  def my_undelivered_orders(employee)
+    undelivered_orders.select { |order| order.employee == employee }
+  end
+
   def find(id)
     @elements.find { |order| order.id == id }
   end
@@ -52,8 +56,7 @@ class OrderRepository
     CSV.open(@csv_file, 'wb') do |csv|
       csv << ['id', 'delivered', 'meal_id', 'customer_id', 'employee_id']
       @elements.each do |order|
-        p order
-        csv << [order.id, order.delivered?, order.meal.id, order.customer.id, order.employee.id]
+        csv << [order.id, order.delivered, order.meal.id, order.customer.id, order.employee.id]
       end
     end
   end
