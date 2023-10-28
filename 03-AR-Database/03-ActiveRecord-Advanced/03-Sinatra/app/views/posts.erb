@@ -1,3 +1,6 @@
 <h1>Hacker News</h1>
 
-# TODO: list posts here. You can use instance variables set in the controller (app.rb)
+<% @posts.each do |post| %> 
+<a href="<%= post.url %>" > <%= post.title %> </a>
+<% end %>
+<%= %>

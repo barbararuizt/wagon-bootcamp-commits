@@ -14,6 +14,7 @@ end
 
 get "/" do
   # TODO
+  @posts = Post.all
   # 1. fetch posts from database.
   # 2. Store these posts in an instance variable
   # 3. Use it in the `app/views/posts.erb` view
