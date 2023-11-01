@@ -24,7 +24,7 @@ class EmployeeRepository < BaseRepository
     CSV.open(@csv_file, 'wb') do |csv|
       csv << ['id', 'username', 'password', 'role']
       @elements.each do |employee|
-        csv << [employee.id, employee.name, employee.address]
+        csv << [employee.id, employee.username, employee.password, employee.role]
       end
     end
   end

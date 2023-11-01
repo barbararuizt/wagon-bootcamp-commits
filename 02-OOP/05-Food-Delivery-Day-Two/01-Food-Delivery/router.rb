@@ -14,11 +14,8 @@ class Router
     while @running
       @current_user = @sessions_controller.login
       while @current_user
-        if @current_user.manager?
-          route_manager_action
-        else
-          route_rider_action
-        end
+        @current_user.manager? ? route_manager_action : route_rider_action
+        puts ""
       end
     end
   end
@@ -33,10 +30,8 @@ class Router
 
   def manager_menu
     puts ''
-    puts 'What do you want to do next?'
-    puts '1. List all meals'
-    puts '2. Add a new meal'
-    puts '3. List all customers'
+    puts "What do you want to do next? \n1. List all meals"
+    puts "2. Add a new meal \n3. List all customers"
     puts '4. Add a new customer'
     puts '5. List all orders'
     puts '6. Add a new order'
@@ -56,8 +51,16 @@ class Router
     print '> '
     gets.chomp.to_i
   end
-  
+
   def dispatch_manager(action)
+    if action < 1 || action > 8
+      puts 'Please choose a valid option'
+    else
+      act(action)
+    end
+  end
+
+  def act(action)
     case action
     when 1 then @meals_controller.list
     when 2 then @meals_controller.add
@@ -66,9 +69,7 @@ class Router
     when 5 then @orders_controller.list
     when 6 then @orders_controller.add
     when 7 then logout
-    when 5 then stop
-    else
-      puts 'Please choose a valid option'
+    when 8 then stop
     end
   end
 

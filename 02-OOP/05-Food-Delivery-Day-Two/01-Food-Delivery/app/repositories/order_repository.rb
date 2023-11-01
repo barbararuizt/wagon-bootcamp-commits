@@ -2,6 +2,7 @@ require_relative 'meal_repository'
 require_relative 'customer_repository'
 require_relative 'employee_repository'
 require 'csv'
+require 'pry-byebug'
 
 class OrderRepository
   def initialize(csv_file, meal_repository, customer_repository, employee_repository)
@@ -38,6 +39,11 @@ class OrderRepository
     save_csv
   end
 
+  def deliver_order(order)
+    order.deliver!
+    save_csv
+  end
+
   private
 
   def load_csv
@@ -56,6 +62,7 @@ class OrderRepository
     CSV.open(@csv_file, 'wb') do |csv|
       csv << ['id', 'delivered', 'meal_id', 'customer_id', 'employee_id']
       @elements.each do |order|
+        # binding.pry
         csv << [order.id, order.delivered, order.meal.id, order.customer.id, order.employee.id]
       end
     end

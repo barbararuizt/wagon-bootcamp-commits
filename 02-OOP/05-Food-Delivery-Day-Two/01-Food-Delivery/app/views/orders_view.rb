@@ -8,7 +8,10 @@ class OrdersView
   def display(orders)
     # p orders[1]
     orders.each_with_index do |order, index|
-      puts "Order ##{index + 1} - #{order.meal.name} - For #{order.customer.name} - Delivered by #{order.employee.username}"
+      meal = order.meal.name
+      customer = order.customer.name
+      employee = order.employee.username
+      puts "Order ##{index + 1} - #{meal} - For #{customer} - Delivered by #{employee}"
     end
   end
 end

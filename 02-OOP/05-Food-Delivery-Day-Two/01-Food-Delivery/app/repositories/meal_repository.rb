@@ -7,7 +7,7 @@ class MealRepository < BaseRepository
     @next_id += 1
     save_csv
   end
-  
+
   private
 
   def load_csv
