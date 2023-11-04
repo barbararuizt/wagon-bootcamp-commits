@@ -3,6 +3,7 @@
 
 /* Importing all components file */
 @import url("components/button.css");
+@import url("components/button.css");
 
 /* General for fonts and colors */
 body {
@@ -16,5 +17,8 @@ a {
   text-decoration: none;
 }
 .text-center {
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
