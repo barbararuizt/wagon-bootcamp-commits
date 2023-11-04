@@ -18,3 +18,14 @@ a {
 .text-center {
   text-align: center;
 }
+
+p {
+  margin: 0px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
