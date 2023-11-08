@@ -8,5 +8,54 @@
   </head>
   <body>
     <!-- Build your responsive signup form here -->
+    <div class="container">
+      <div class="row justify-content-center" >
+        <div class="col-sm-12 col-md-10 col-lg-8 m-4">
+            <!-- Your form content -->
+          <form action="#"class="row">
+
+            <div class="col-12 mb-3" >
+              <label for="your-name" class="form-label">Your name</label>
+              <input type="text" id="your-name" class="form-control" placeholder="Robert Schwazi">
+            </div>
+
+            <div class="col-sm-12 col-lg-6 mb-3" >
+              <label for="your-birth-date" class="form-label">Your birth-date</label>
+              <input type="date" id="your-birth-date" class="form-control" placeholder="Robert Schwazi">
+            </div>
+
+            <div class="col-sm-12 col-lg-6 mb-3" >
+              <label for="your-email" class="form-label">Your email</label>
+              <input type="email" id="your-email" class="form-control" placeholder="bob@gmail.com">
+            </div>
+
+            <div class="col-sm-12 col-lg-6 mb-3">
+              <label for="favorite" class="form-label">What's your favorite language?</label>
+              <select id="favorite" class="form-control" name="language">
+                <option value="ruby">Ruby</option>
+                <option value="css">CSS</option>
+                <option value="javascript">JavaScript</option>
+              </select>
+            </div>
+
+            <div class="col-sm-12 col-lg-6 mb-3">
+              <label for="occupation" class="form-label">What's your occupation?</label>
+              <select id="occupation" class="form-control" name="occupation">
+                <option value="student">Student</option>
+                <option value="intern">Intern/Trainee</option>
+                <option value="employee">Employee</option>
+                <option value="bussiness-owner">Bussiness-Owner</option>
+                <option value="none">None</option>
+              </select>
+            </div>
+
+            <div class="col-12 mb-3 d-flex justify-content-center">
+              <input type="submit" value="Sign In" class="btn btn-primary w-75">
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
