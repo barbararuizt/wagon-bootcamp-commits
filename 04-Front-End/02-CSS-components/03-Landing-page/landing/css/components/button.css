@@ -1,0 +1,19 @@
+
+.btn-primary {
+  background-color: rgb(86, 224, 143);
+  padding: 15px;
+  width: 100px;
+  border-radius: 30px;
+  text-align: center;
+  color: black;
+}
+
+.fa-brands {
+  size: 200px;
+}
+
+.btn-social i {
+  color: white;
+  font-size: 2rem;
+  padding: 10px;
+}

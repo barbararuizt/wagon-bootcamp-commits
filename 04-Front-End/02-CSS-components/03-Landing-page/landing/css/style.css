@@ -3,6 +3,9 @@
 
 /* Fontawesome */
 @import url('https://use.fontawesome.com/releases/v6.1.2/css/all.css');
+@import url('components/banner.css');
+@import url('components/button.css');
+
 
 /* Utilities */
 body {
@@ -19,4 +22,10 @@ a {
 }
 
 /* Custom design below! */
+
+.subtitle {
+  font-size: 1.2rem;
+  font-weight: 300;
+  color: #b8c7d5;
+}
 
