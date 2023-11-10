@@ -2,5 +2,10 @@
 
 /* We just give you a Gmaps with random width/height */
 #map {
-  width: 100%;
+  width: 40%;
+  height: 100vh; /* se acomoda a la pantalla del usuario, como un porcentaje pero sin serlo */
+  position: sticky; /* pegate a n pixeles según top/bottom/left/right */
+  top: 0; /* para position */
 }
+
+/* pk.eyJ1IjoiaWJlbmZwIiwiYSI6ImNsb3J5bG5sMjB0Y2IybG16eHpnd3UyeG0ifQ.nC5RxWzt6ZasuFn52C50Ww */

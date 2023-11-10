@@ -2,7 +2,7 @@
   background-size: cover;
   background-position: center;
   height: 150px;
-  border-radius: 1px;
+  border-radius: 5px;
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
@@ -11,4 +11,31 @@
   color: white;
   font-weight: bolder;
   text-shadow: 0 0 10px rgba(0,0,0,0.7);
+  margin: 10px;
+}
+
+@media(max-width: 2000px) {
+  .cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    flex-grow: 1; /* crece en comparación a sus hermanos */
+  }
+}
+
+@media(max-width: 900px) {
+  .cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+
+@media(max-width: 500px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+.main-container {
+  display: flex;
 }
