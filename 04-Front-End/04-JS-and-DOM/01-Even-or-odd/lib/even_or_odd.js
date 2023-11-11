@@ -5,6 +5,7 @@
 import runChallenges from "../spec/even_or_odd_examiner.js";
 
 export const evenOrOdd = (number) => {
+  return number % 2 === 0 ? "even" : "odd";
   // TODO: this should return "even" if the number is even, "odd" otherwise
 };
 
