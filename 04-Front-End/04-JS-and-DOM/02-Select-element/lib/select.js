@@ -7,6 +7,7 @@ import runChallenges from "../spec/select_examiner.js";
 // TODO 1. Open the `index.html` file and set an id to the France <li>
 
 const franceElement = () => {
+  return document.querySelector("#fr");
   // TODO 2: select the France list item and return it!
 };
 
