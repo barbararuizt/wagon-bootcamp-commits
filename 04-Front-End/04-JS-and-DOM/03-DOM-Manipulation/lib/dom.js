@@ -14,8 +14,8 @@ import runChallenges from "../spec/examiner.js";
 // Ex 1. Read what's written in the email input
 //       Make the function getEmail() return it
 const getEmail = () => {
-  let emailInput = document.querySelector("#email").value
-  return emailInput
+  let emailInput = document.querySelector("#email").value;
+  return emailInput;
   // TODO: return the email
 };
 
@@ -36,8 +36,8 @@ element.innerHTML = `<strong>This is my email now</strong>`;
 // Ex 4. Add the .blue CSS class to the th elements
 const th = document.querySelectorAll("th");
 
-th.forEach(t => {
-  t.classList.add("blue")
+th.forEach((t) => {
+  t.classList.add("blue");
 });
 
 
@@ -55,7 +55,7 @@ const teamCountBeforeAddition = teamCount();
 // Ex 6. Say there is a 15th team added to the table.
 //       Add a row at the bottom, this new team should have zero points.
 const list = document.querySelector("tbody");
-list.insertAdjacentHTML('beforeend','<tr><td>15</td><td>Barbara FC </td><td>0</td></tr>')
+list.insertAdjacentHTML('beforeend', '<tr><td>15</td><td>Barbara FC </td><td>0</td></tr>');
 
 
 // Ex 7. Write some code to sum all points given to all teams
@@ -63,24 +63,24 @@ list.insertAdjacentHTML('beforeend','<tr><td>15</td><td>Barbara FC </td><td>0</t
 const summarizePoints = () => {
   let sum = 0;
   const elements = document.querySelectorAll("tbody tr");
-  elements.forEach(elem => {
+  elements.forEach((elem) => {
     const data = elem.querySelectorAll('td');
     sum += parseInt(data[2].innerText, 10);
-  })
+  });
   return sum;
   // TODO: return the sum
 };
 
 
 // Ex 8. Change the background color of all `<th>` cells to #DDF4FF
-th.forEach(t => {
+th.forEach((t) => {
   t.style.backgroundColor = "#DDF4FF";
 });
 
 
 // Ex 9. Remove the "Email:" label from the DOM
-const label = document.querySelector("label")
-label.remove()
+const label = document.querySelector("label");
+label.remove();
 
 
 
