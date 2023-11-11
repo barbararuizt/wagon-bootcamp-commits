@@ -5,11 +5,19 @@
 import runChallenges from "../spec/inbox_examiner.js";
 
 const hasNewMessage = () => {
+  const num = Math.floor(Math.random() * 6);
+  return num === 1 ? true : false; 
   // TODO: return true with a probability of 20%.
 };
 
 const newMessage = () => {
+  const senders = ['William Shakespear', 'Beyonce', 'Gabriel Garcia Marquez', 'Pedro Paramo', 'Harry Styles']
+  const subjects = ['I need a new car battery, help', 'RSVP to my weeding event', 'Pending Payment - OnlyFans', 'I made a new Youtube video!', 'Check out my Linkedin', 'Could you lend me some sugar?', 'I miss you.', 'RSVP to our wedding', 'Lets go to Narnia!']
   // TODO: return a random message as an object with two keys, subject and sender
+  let email = {}
+  email.sender = senders[Math.floor(Math.random() * 6)]
+  email.subject = subjects[Math.floor(Math.random() * 10)]
+  return email
 };
 
 const appendMessageToDom = (message) => {
