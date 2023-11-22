@@ -1,0 +1,19 @@
+body {
+  font-family: Montserrat, sans-serif;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+.start {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+#subtitle {
+  font-family: Times, serif;
+  font-style: italic;
+}
+
+.text {
+  font-family: Times, serif;
+}
