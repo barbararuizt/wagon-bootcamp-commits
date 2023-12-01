@@ -8,6 +8,3 @@ import CopyToClipboardController from "./controllers/copy_to_clipboard_controlle
 window.Stimulus = Application.start();
 window.Stimulus.register("copy-to-clipboard", CopyToClipboardController);
 // TODO: Register your Stimulus Controller below
-
-
-const data = document.querySelector("input").value;
