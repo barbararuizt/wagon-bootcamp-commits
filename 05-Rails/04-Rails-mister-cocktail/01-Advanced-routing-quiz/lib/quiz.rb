@@ -14,10 +14,18 @@ def restaurants_resources_routes
 
     # Add more routes here
     # ...
+    get '/restaurants', to: 'restaurants#index'
+    get '/restaurants/:id', to: 'restaurants#show'
+    get '/restaurants/new', to: 'restaurants#new'
+    post '/restaurants', to: 'restaurants#create'
+    delete '/restaurants/:id', to: 'restaurants#destroy'
+    get '/restaurants/:id/edit', to: 'restaurants#edit'
+    patch '/restaurants/:id', to: 'restaurants#update'
   end
 end
 
 def nested_routes_for_one_to_many?
+  return false
   # TODO: Return a `true` or `false` to answer this question:
   # If you have a one to many relationship between your models like `Restaurant` and `Review` (belongs_to :restaurant),
   # do you always have to nest all your routes for `Review` in `Restaurant`?
@@ -27,4 +35,5 @@ def validate_name
   # TODO: Return a `string` of the Active Record validation need to make sure no record is
   # created without a name. /!\ in Rails' context, a validation **is not** a String!
   # (it is only a String for the purpose of this exercise)
+  return "validates :name, presence: true"
 end
